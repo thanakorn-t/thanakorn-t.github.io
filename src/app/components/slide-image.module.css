@@ -1,0 +1,9 @@
+.slide__image {
+    border-color: var(--dark-blue-2);
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 20px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border: 4px solid;
+    border-radius: 1rem;
+}
