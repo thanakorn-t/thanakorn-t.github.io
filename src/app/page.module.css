@@ -1,5 +1,5 @@
 .background-size {
-    height: 100vh;
+    height: 600px;
 }
 
 @media (width < 900px) {
@@ -9,8 +9,8 @@
 }
 
 .slide {
-    height: 100vh;
-    width: 50vw;
+    height: 100%;
+    width: calc(50vw - 8px);
 }
 
 @media (width < 900px) {
@@ -27,6 +27,25 @@
     overflow: hidden;
 }
 
+.slide__wrapper::after {
+    content: '';
+    background: linear-gradient(
+        to bottom,
+        var(--dark-blue-1) 0%,
+        rgba(16, 20, 24, 0) 30%,
+        rgba(16, 20, 24, 0) 70%,
+        var(--dark-blue-1) 100%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    display: block;
+}
+
 @media (width >= 900px) {
     .slide__wrapper::after {
         content: '';
@@ -37,7 +56,7 @@
         );
         display: block;
         position: absolute;
-        top: 0px;
+        top: -3px;
         left: -2px;
         width: 400px;
         height: 150%;
@@ -45,28 +64,6 @@
         z-index: 10;
     }
 }
-
-@media (width < 900px) {
-    .slide__wrapper::after {
-        content: '';
-        background: linear-gradient(
-            to bottom,
-            var(--dark-blue-1) 0%,
-            rgba(16, 20, 24, 0) 30%,
-            rgba(16, 20, 24, 0) 70%,
-            var(--dark-blue-1) 100%
-        );
-        position: absolute;
-        top: -3px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 2;
-        display: block;
-    }
-}
-
 .slide__body {
     left: 40%;
     position: absolute;
